@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ShopView">
+        <attr name="radius" format="dimension|reference" />
+        <attr name="text_width" format="dimension|reference" />
+        <attr name="circle_width" format="dimension|reference" />
+        <attr name="symbol_width" format="dimension|reference" />
+        <attr name="circle_color" format="color|reference" />
+        <attr name="border_color" format="color|dimension" />
+        <attr name="symbol_color" format="color|dimension" />
+        <attr name="text_color" format="color|dimension" />
+        <attr name="text_background" format="color|dimension" />
+    </declare-styleable>
+</resources>
