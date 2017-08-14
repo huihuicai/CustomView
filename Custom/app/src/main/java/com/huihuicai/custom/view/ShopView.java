@@ -85,6 +85,8 @@ public class ShopView extends View {
     }
 
     private void init(@Nullable AttributeSet attrs) {
+        //要关闭硬件加速，不然动画绘制的时候可能有重影，清屏也需要关闭硬件加速
+        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         TypedArray ta = getResources().obtainAttributes(attrs, R.styleable.ShopView);
         mCircleRadius = ta.getDimensionPixelOffset(R.styleable.ShopView_radius, 40);
         mBorderWidth = ta.getDimensionPixelSize(R.styleable.ShopView_circle_width, 4);
@@ -251,15 +253,16 @@ public class ShopView extends View {
         mArcRect.top = mLeftRadius.y - mCircleRadius - mBorderWidth;
         mArcRect.right = mRightRadius.x + mCircleRadius + mBorderWidth;
         mArcRect.bottom = mRightRadius.y + mCircleRadius + mBorderWidth;
-        Log.e("drawCircle", "mArcRect.bottom=" + mArcRect.bottom);
         canvas.drawRoundRect(mArcRect, 90, 90, mPaint);
     }
 
     //文字背景
     private void drawBgText(Canvas canvas) {
         mPaint.setColor(mBgTextView);
-        canvas.drawRect(mLeftRadius.x + mCircleRadius, mLeftRadius.y - mCircleRadius,
-                mRightRadius.x - mCircleRadius, mRightRadius.y + mCircleRadius, mPaint);
+        if (mRightRadius.x - mLeftRadius.x > mCircleRadius) {
+            canvas.drawRect(mLeftRadius.x + mCircleRadius, mLeftRadius.y - mCircleRadius,
+                    mRightRadius.x - mCircleRadius, mRightRadius.y + mCircleRadius, mPaint);
+        }
     }
 
     //绘制左右圆的部分
