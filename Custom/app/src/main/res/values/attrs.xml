@@ -10,5 +10,9 @@
         <attr name="symbol_color" format="color|dimension" />
         <attr name="text_color" format="color|dimension" />
         <attr name="text_background" format="color|dimension" />
+        <attr name="mode" format="enum">
+            <enum name="PACK" value="0" />
+            <enum name="EXPAND" value="1" />
+        </attr>
     </declare-styleable>
 </resources>
