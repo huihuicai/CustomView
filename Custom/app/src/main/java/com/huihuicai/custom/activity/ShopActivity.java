@@ -23,7 +23,6 @@ public class ShopActivity extends AppCompatActivity {
     private ShopView shopView;
     private ImageView ivEnd, ivDot;
     private Point mEndPoint;
-    private Drawable mDrawable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +31,6 @@ public class ShopActivity extends AppCompatActivity {
         shopView = (ShopView) findViewById(R.id.shop_view);
         ivEnd = (ImageView) findViewById(R.id.iv_end);
         ivDot = (ImageView) findViewById(R.id.iv_dot);
-        mDrawable = getResources().getDrawable(R.mipmap.ic_launcher_round);
         shopView.initData(1, 100);
         shopView.setClickListener(new ShopView.ClickListener() {
             @Override
