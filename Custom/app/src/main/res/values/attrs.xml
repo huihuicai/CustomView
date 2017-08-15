@@ -15,4 +15,20 @@
             <enum name="EXPAND" value="1" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="WaveView">
+        <attr name="wave_height" format="dimension|integer" />
+        <attr name="wave_light_color" format="color|integer" />
+        <attr name="wave_dark_color" format="color|integer" />
+        <attr name="model" format="enum">
+            <enum name="SINGLE" value="0" />
+            <enum name="DOUBLE" value="1" />
+            <enum name="BALL" value="2" />
+        </attr>
+        <attr name="speed" format="enum">
+            <enum name="FAST" value="2000" />
+            <enum name="MIDDLE" value="4000" />
+            <enum name="SLOW" value="6000" />
+        </attr>
+    </declare-styleable>
 </resources>

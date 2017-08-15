@@ -11,4 +11,8 @@
         android:onClick="onShop"
         android:text="购物车加减" />
 
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="onWave"
+        android:text="水波震动" />
 </LinearLayout>

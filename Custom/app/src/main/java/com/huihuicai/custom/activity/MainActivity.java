@@ -18,4 +18,8 @@ public class MainActivity extends AppCompatActivity {
     public void onShop(View view) {
         startActivity(new Intent(this, ShopActivity.class));
     }
+
+    public void onWave(View view) {
+        startActivity(new Intent(this, WaveActivity.class));
+    }
 }
