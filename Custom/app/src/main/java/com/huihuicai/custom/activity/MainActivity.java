@@ -22,4 +22,7 @@ public class MainActivity extends AppCompatActivity {
     public void onWave(View view) {
         startActivity(new Intent(this, WaveActivity.class));
     }
+    public void onDrag(View view) {
+        startActivity(new Intent(this, DragButtonActivity.class));
+    }
 }

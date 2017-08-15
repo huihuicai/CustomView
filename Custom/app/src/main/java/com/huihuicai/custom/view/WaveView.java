@@ -9,9 +9,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.sax.RootElement;
 import android.support.annotation.Nullable;
-import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
@@ -20,6 +18,7 @@ import com.huihuicai.custom.R;
 
 /**
  * Created by ybm on 2017/8/15.
+ * 其他的类似效果做法一样的
  */
 
 public class WaveView extends View {

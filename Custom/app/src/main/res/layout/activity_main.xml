@@ -15,4 +15,9 @@
         style="@style/BtnStyle"
         android:onClick="onWave"
         android:text="水波震动" />
+
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="onDrag"
+        android:text="拖动按钮" />
 </LinearLayout>
