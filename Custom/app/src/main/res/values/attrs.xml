@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="text_color" format="color|dimension|reference" />
     <declare-styleable name="ShopView">
         <attr name="radius" format="dimension|reference" />
         <attr name="text_width" format="dimension|reference" />
@@ -8,7 +9,7 @@
         <attr name="circle_color" format="color|reference" />
         <attr name="border_color" format="color|dimension" />
         <attr name="symbol_color" format="color|dimension" />
-        <attr name="text_color" format="color|dimension" />
+        <attr name="text_color" />
         <attr name="text_background" format="color|dimension" />
         <attr name="mode" format="enum">
             <enum name="PACK" value="0" />
@@ -29,6 +30,20 @@
             <enum name="FAST" value="2000" />
             <enum name="MIDDLE" value="4000" />
             <enum name="SLOW" value="6000" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="PasswordView">
+        <attr name="border_radius" format="dimension|integer" />
+        <attr name="border_size" format="dimension|integer" />
+        <attr name="border_count" format="dimension|integer" />
+        <attr name="border_margin" format="dimension|integer" />
+        <attr name="fill_color" format="color" />
+        <attr name="null_color" format="color" />
+        <attr name="text_color" />
+        <attr name="PWD" format="enum">
+            <enum name="SHOW" value="0" />
+            <enum name="HIDE" value="1" />
         </attr>
     </declare-styleable>
 </resources>

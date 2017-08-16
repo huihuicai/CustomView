@@ -18,6 +18,6 @@
 
     <Button
         style="@style/BtnStyle"
-        android:onClick="onDrag"
-        android:text="拖动按钮" />
+        android:onClick="onPwd"
+        android:text="密码框" />
 </LinearLayout>

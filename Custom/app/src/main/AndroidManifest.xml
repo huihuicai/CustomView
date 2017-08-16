@@ -22,7 +22,9 @@
         <activity
             android:name=".activity.WaveActivity"
             android:exported="false" />
-        <activity android:name=".activity.DragButtonActivity"></activity>
+        <activity
+            android:name=".activity.PasswordActivity"
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

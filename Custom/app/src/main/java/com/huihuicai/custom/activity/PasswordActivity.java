@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.huihuicai.custom.R;
 
-public class DragButtonActivity extends AppCompatActivity {
+public class PasswordActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drag_button);
+        setContentView(R.layout.activity_password);
     }
 }
