@@ -20,4 +20,9 @@
         style="@style/BtnStyle"
         android:onClick="onPwd"
         android:text="密码框" />
+
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="springAnim"
+        android:text="弹性动画" />
 </LinearLayout>

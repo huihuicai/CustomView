@@ -26,4 +26,8 @@ public class MainActivity extends AppCompatActivity {
     public void onPwd(View view) {
         startActivity(new Intent(this, PasswordActivity.class));
     }
+
+    public void springAnim(View view) {
+        startActivity(new Intent(this, SpringAnimActivity.class));
+    }
 }
