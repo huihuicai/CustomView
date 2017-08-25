@@ -18,18 +18,20 @@ public class SpringAnimActivity extends AppCompatActivity {
 
     private SpringAnimation mAnimationX;//x方向
     private SpringAnimation mAnimationY;//y方向
-    private VelocityTracker mVelocity;
-    private ImageView ivDrag;
+    private ImageView ivDrag, ivDrag1, ivDrag2, ivDrag3;
     private int mViewWidth, mViewHeight;
     private float mWidthStart, mHeightStart;
     private int[] mViewPosition = new int[2];
-    private boolean mDragable = false;
+    private boolean mCanDrag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spring_anim);
         ivDrag = (ImageView) findViewById(R.id.iv_drag);
+        ivDrag1 = (ImageView) findViewById(R.id.iv_drag_1);
+        ivDrag2 = (ImageView) findViewById(R.id.iv_drag_2);
+        ivDrag3 = (ImageView) findViewById(R.id.iv_drag_3);
         ivDrag.getViewTreeObserver().addOnGlobalLayoutListener(
                 new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
@@ -39,10 +41,8 @@ public class SpringAnimActivity extends AppCompatActivity {
                         mViewHeight = ivDrag.getMeasuredHeight();
                         mWidthStart = ivDrag.getX();
                         mHeightStart = ivDrag.getY();
-                        Log.e("layout", "ivDrag.getX():" + ivDrag.getX());
-                        Log.e("layout", "ivDrag.getY():" + ivDrag.getY());
-                        mAnimationX = createAnimation(ivDrag, SpringAnimation.TRANSLATION_X, ivDrag.getX());
-                        mAnimationY = createAnimation(ivDrag, SpringAnimation.TRANSLATION_Y, ivDrag.getY());
+                        mAnimationX = createAnimation(ivDrag, SpringAnimation.TRANSLATION_X, 0);
+                        mAnimationY = createAnimation(ivDrag, SpringAnimation.TRANSLATION_Y, 0);
                         ivDrag.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                     }
                 }
@@ -62,9 +62,6 @@ public class SpringAnimActivity extends AppCompatActivity {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (mVelocity == null) {
-            mVelocity = VelocityTracker.obtain();
-        }
         int action = event.getActionMasked();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
@@ -74,33 +71,26 @@ public class SpringAnimActivity extends AppCompatActivity {
                         && mViewPosition[1] <= mLastY && mViewPosition[1] + mViewHeight >= mLastY) {
                     mAnimationX.cancel();
                     mAnimationY.cancel();
-                    mVelocity.clear();
-                    mDragable = true;
-                    Log.e("down", "点击了相应的区域");
+                    mCanDrag = true;
                     return true;
                 }
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (mDragable) {
+                if (mCanDrag) {
                     float deltaX = event.getRawX() - mLastX + mWidthStart;
                     float deltaY = event.getRawY() - mLastY + mHeightStart;
                     if (Math.abs(deltaX) < 1 || Math.abs(deltaY) < 1) {
                         return false;
                     }
-                    Log.e("move", "deltaX:" + deltaX + ",   deltaY:" + deltaY);
                     ivDrag.animate().x(deltaX).y(deltaY).setDuration(0).start();
-                    mVelocity.addMovement(event);
-                    mVelocity.computeCurrentVelocity(1000);
                     return true;
                 }
                 break;
             case MotionEvent.ACTION_UP:
-                if (mDragable) {
+                if (mCanDrag) {
                     mAnimationX.start();
                     mAnimationY.start();
-                    mVelocity.recycle();
-                    mVelocity = null;
-                    mDragable = false;
+                    mCanDrag = false;
                 }
                 break;
         }
