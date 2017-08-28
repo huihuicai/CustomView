@@ -6,6 +6,73 @@
     android:layout_height="match_parent"
     tools:context="com.huihuicai.custom.activity.SpringAnimActivity">
 
+    <com.huihuicai.custom.view.SpringScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#fe3476"
+                android:gravity="center"
+                android:text="我是测试小兵"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#bc8923"
+                android:gravity="center"
+                android:text="我是测试小兵"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#872356"
+                android:gravity="center"
+                android:text="我是测试小兵"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#985632"
+                android:gravity="center"
+                android:text="我是测试小兵"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#bc8923"
+                android:gravity="center"
+                android:text="我是测试小兵"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#872356"
+                android:gravity="center"
+                android:text="我是测试小兵"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#985632"
+                android:gravity="center"
+                android:text="我是测试小兵"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </com.huihuicai.custom.view.SpringScrollView>
+
     <ImageView
         android:id="@+id/iv_drag_1"
         android:layout_width="wrap_content"
@@ -13,7 +80,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="10dp"
-        android:src="@mipmap/ic_launcher_round" />
+        android:src="@mipmap/ic_launcher_round"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/iv_drag_2"
@@ -22,7 +90,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="10dp"
-        android:src="@mipmap/ic_launcher_round" />
+        android:src="@mipmap/ic_launcher_round"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/iv_drag_3"
@@ -31,7 +100,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="10dp"
-        android:src="@mipmap/ic_launcher_round" />
+        android:src="@mipmap/ic_launcher_round"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/iv_drag"
