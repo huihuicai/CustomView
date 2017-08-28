@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.huihuicai.custom.activity.SpringAnimActivity">
 
-    <com.huihuicai.custom.view.SpringScrollView
+    <com.huihuicai.custom.view.SpringNestedScroll
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -71,7 +71,7 @@
                 android:text="我是测试小兵"
                 android:textSize="20sp" />
         </LinearLayout>
-    </com.huihuicai.custom.view.SpringScrollView>
+    </com.huihuicai.custom.view.SpringNestedScroll>
 
     <ImageView
         android:id="@+id/iv_drag_1"
