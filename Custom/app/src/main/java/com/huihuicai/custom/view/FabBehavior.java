@@ -1,12 +1,10 @@
 package com.huihuicai.custom.view;
 
 import android.animation.Animator;
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 
@@ -19,6 +17,7 @@ public class FabBehavior extends CoordinatorLayout.Behavior<View> {
     private int mMoveHeight;
     private int mCurPosition;
     private boolean isStopAnim = true;
+    private boolean showOrHide = false;
     private ViewPropertyAnimator mAnimator;
 
     public FabBehavior(Context context, AttributeSet attrs) {
@@ -39,6 +38,7 @@ public class FabBehavior extends CoordinatorLayout.Behavior<View> {
 
     @Override
     public void onNestedPreScroll(CoordinatorLayout coordinatorLayout, View child, View target, int dx, int dy, int[] consumed) {
+        //如果是已经复位了，就不执行相应的动画
         if (dy > 10) {
             handleAnim(child, true);
         } else if (dy < -10) {
@@ -46,10 +46,12 @@ public class FabBehavior extends CoordinatorLayout.Behavior<View> {
         }
     }
 
-    private void handleAnim(View view, boolean isHide) {
-        if (!isStopAnim) return;
+    private void handleAnim(View view, final boolean isHide) {
+        if (!isStopAnim || isHide == showOrHide) {
+            return;
+        }
         int finalPosition = isHide ? mMoveHeight : mCurPosition;
-        mAnimator = view.animate().y(finalPosition).setDuration(500);
+        mAnimator = view.animate().y(finalPosition).setDuration(300);
         mAnimator.start();
         mAnimator.setListener(new Animator.AnimatorListener() {
             @Override
@@ -60,6 +62,7 @@ public class FabBehavior extends CoordinatorLayout.Behavior<View> {
             @Override
             public void onAnimationEnd(Animator animation) {
                 isStopAnim = true;
+                showOrHide = isHide;
             }
 
             @Override
