@@ -25,7 +25,8 @@
         <activity
             android:name=".activity.PasswordActivity"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".activity.SpringAnimActivity"></activity>
+        <activity android:name=".activity.SpringAnimActivity" />
+        <activity android:name=".activity.CoordinatedActivity"></activity>
     </application>
 
 </manifest>

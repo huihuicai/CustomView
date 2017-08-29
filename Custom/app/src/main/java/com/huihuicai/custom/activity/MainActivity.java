@@ -1,6 +1,7 @@
 package com.huihuicai.custom.activity;
 
 import android.content.Intent;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,5 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void springAnim(View view) {
         startActivity(new Intent(this, SpringAnimActivity.class));
+    }
+
+    public void onCoordinate(View view) {
+        startActivity(new Intent(this, CoordinatedActivity.class));
     }
 }

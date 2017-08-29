@@ -25,4 +25,9 @@
         style="@style/BtnStyle"
         android:onClick="springAnim"
         android:text="弹性动画" />
+
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="onCoordinate"
+        android:text="联动" />
 </LinearLayout>
