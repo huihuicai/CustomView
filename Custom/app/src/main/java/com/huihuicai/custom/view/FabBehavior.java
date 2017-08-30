@@ -18,7 +18,6 @@ public class FabBehavior extends CoordinatorLayout.Behavior<View> {
     private int mCurPosition;
     private boolean isStopAnim = true;
     private boolean showOrHide = false;
-    private ViewPropertyAnimator mAnimator;
 
     public FabBehavior(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -51,9 +50,9 @@ public class FabBehavior extends CoordinatorLayout.Behavior<View> {
             return;
         }
         int finalPosition = isHide ? mMoveHeight : mCurPosition;
-        mAnimator = view.animate().y(finalPosition).setDuration(300);
-        mAnimator.start();
-        mAnimator.setListener(new Animator.AnimatorListener() {
+        ViewPropertyAnimator animator = view.animate().y(finalPosition).setDuration(300);
+        animator.start();
+        animator.setListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
                 isStopAnim = false;
