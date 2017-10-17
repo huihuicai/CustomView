@@ -46,4 +46,8 @@
             <enum name="HIDE" value="1" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="MessageView">
+
+    </declare-styleable>
 </resources>

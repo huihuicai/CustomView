@@ -47,7 +47,7 @@ public class CoordinatedActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return 15;
+            return 20;
         }
 
         class Holder extends RecyclerView.ViewHolder {

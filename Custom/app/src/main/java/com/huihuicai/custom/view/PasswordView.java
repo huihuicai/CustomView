@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.view.inputmethod.BaseInputConnection;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import com.huihuicai.custom.R;
 
@@ -161,6 +163,7 @@ public class PasswordView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+            Log.e("Touch", "MotionEvent.ACTION_DOWN================");
             requestFocus();
             showKeyBoard();
             return true;
@@ -172,13 +175,15 @@ public class PasswordView extends View {
         if (mInputManager == null) {
             mInputManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
         }
-        mInputManager.showSoftInput(this, InputMethodManager.SHOW_FORCED);
+        Toast.makeText(getContext(), "弹出键盘来", Toast.LENGTH_SHORT).show();
+        mInputManager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT);
     }
 
     private void hideKeyBoard() {
         if (mInputManager == null) {
             return;
         }
+        Log.e("keyboard", "hideKeyBoard===============");
         mInputManager.hideSoftInputFromWindow(this.getWindowToken(), 0);
     }
 

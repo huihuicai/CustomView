@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.huihuicai.custom">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -22,11 +25,10 @@
         <activity
             android:name=".activity.WaveActivity"
             android:exported="false" />
-        <activity
-            android:name=".activity.PasswordActivity"
-            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activity.PasswordActivity" />
         <activity android:name=".activity.SpringAnimActivity" />
-        <activity android:name=".activity.CoordinatedActivity"></activity>
+        <activity android:name=".activity.CoordinatedActivity" />
+        <activity android:name=".weex.WeexActivity"></activity>
     </application>
 
 </manifest>

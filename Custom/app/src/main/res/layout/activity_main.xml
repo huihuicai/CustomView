@@ -30,4 +30,9 @@
         style="@style/BtnStyle"
         android:onClick="onCoordinate"
         android:text="联动" />
+
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="onWeex"
+        android:text="weex页面" />
 </LinearLayout>
